@@ -23,9 +23,9 @@ Your html should look something like
     <title></title>
 </head>
 <body>
-    <div ng-controller="HomeCtrl">
+    <div ng-controller="HomeCtrl as ctrl">
 		<ul>
-			<li ng-repeat="item in items">
+			<li ng-repeat="item in ctrl.items">
 				<span>{{item.name}}</span>
 			</li>
 		</ul>
@@ -50,21 +50,23 @@ Now, inside the controller specify the dependencies as usual. For example,
 
 ```javascript
 (function() {
+	//
+	//	$scope and $http will be injected automatically into the controller instance before the constructor is invoked
+	//
+	angular.module("MyApp").controller("HomeCtrl", ["$scope", "$http", HomeCtrl]);
+	
 	function HomeCtrl() {
-		$scope.change = function () {
-			setTimeout(function () {
-				$scope.message = "XXX";
-			}, 1000);
-		}
+		//
+		//	Additional fields (beside those that are injected automatically)
+		//
+		this.items = [];
 	}
 	
 	HomeCtrl.prototype.refresh = function() {
 		this.$http.get("/api/items").then(function(items){
-			this.$scope.items = items;
+			this.items = items;
 		});
-	}
-	
-	angular.module("MyApp").controller("HomeCtrl", ["$scope", "$http", HomeCtrl]);
+	}	
 })();
 ```
 
