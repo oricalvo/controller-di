@@ -1,0 +1,18 @@
+{
+  "name": "oc-controller-di",
+  "version": "1.0.0",
+  "homepage": "https://github.com/oricalvo/controller-di",
+  "authors": [
+    "oric <ori.calvo@gmail.com>"
+  ],
+  "description": "Inject constructor dependencies into controller instance",
+  "main": "oc-controller-di.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
