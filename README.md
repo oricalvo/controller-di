@@ -4,7 +4,7 @@ Inject controller dependencies into the controller instance
 # What is controller-di?
 
 Writing prototype based controllers with Angular is an efficient technique but quite tedious. <br/>
-All dependencies must be copied manually from the controller constructor to the controller instance. <br/>
+All dependencies must be copied manually from the controller constructor to the controller instance. <br/><br/>
 <strong>oc-controller-di</strong> allows you to specify the dependencies as usual and they will be automatically copied into the controller instance <br/>
 
 ## Installing
