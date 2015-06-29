@@ -13,7 +13,7 @@ All dependencies must be copied manually from the controller constructor to the 
 bower install oc-controller-di
 ```
 
-Add script references to oc-controller-di.js
+Add script references to <strong>oc-controller-di.js</strong><br/>
 Your html should look something like
 
 ```javascript
