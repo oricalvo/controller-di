@@ -63,8 +63,10 @@ Now, inside the controller specify the dependencies as usual. For example,
 	}
 	
 	HomeCtrl.prototype.refresh = function() {
+		var me = this;
+		
 		this.$http.get("/api/items").then(function(items){
-			this.items = items;
+			me.items = items;
 		});
 	}	
 })();
